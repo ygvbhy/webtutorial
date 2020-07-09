@@ -1,4 +1,4 @@
-var userPw = document.querySelector("#user_pw");
+/* var userPw = document.querySelector("#user_pw");
 var userPwCheck = document.querySelector("#user_pw_check");
 
 userPwCheck.onchange = comparePw();
@@ -9,4 +9,4 @@ function comparePw(){
         userPwCheck.value = "";
         userPwCheck.focus();
     }
-}
+} */
