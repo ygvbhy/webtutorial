@@ -18,7 +18,7 @@
 <body>
     <h1>글 수정</h1>
     <form action = "change_sql.php" method = "POST">
-        <!-- 게시글 목록 가져오는 코드 -->
+        <!-- 게시글 목록 가져오는 코드 --> 
         제목 : 
         <?php
         echo "<input type = 'text' name = 'title' value = '{$title}'><br>
