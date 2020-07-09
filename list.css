@@ -1,0 +1,24 @@
+.title {
+    width: 500px;
+    text-align: center;
+}
+.ind {
+    text-align: center;
+}
+.date_list {
+    text-align: center;
+    width: 100px;
+}
+.write {
+	margin-top:20px;
+    right: 0;
+    float: left;
+}
+.textarea {
+    width: 500px;
+    height: 300px;
+}
+.title_box{
+    border: 1px solid black;
+    width: 500px;
+}
