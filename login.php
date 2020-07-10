@@ -20,10 +20,11 @@ if ($name == ""){
         </form>
         <p id = "meg"></p>
         <a href = "join.php"><button>회원가입</button></a>
-        <script> // 작동 안됨
+        <script>
             $("#form").submit(function(){
                 if ($("#id").val() == "" || $("#password").val() == ""){
-                    $("meg").html("값 입력");
+                    $("#meg").html("값을 입력해 주세요.");
+                    $("#meg").css("color", "red");
                     return false;
                 }
             });
