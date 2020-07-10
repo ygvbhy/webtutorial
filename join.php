@@ -4,14 +4,13 @@
     <head>
         <title>회원가입</title>
         <meta charset = "UTF-8">
-        
     </head>
     <body>
         <h1>회원가입</h1>
         <form action = "join_sql.php" method = "POST">
         아이디 : <input type = "text" autofocus minlength = "6" maxlength = "10" name = "id" id = "user_id">
-        <br>
-        <p id = "id_check"></p>
+        &nbsp;<input type = "button" onclick = "id_check()" value = "중복확인"><br>
+        <p id = "idc"></p>
         비밀번호 : <input type = "password" name = "password" minlength = "8" id = "user_pw" onchange = "Pw_check()">
         <br>
         <p id = "pw_check"></p>
@@ -46,12 +45,29 @@
                     pw_check.style.color = "green";
                 }
                 else {
-                    pw_check.innerHTML = "영대소문자 숫자 8자리이상으로 해주세요.";
+                    pw_check.innerHTML = "영대소문자, 숫자 8자리이상으로 해주세요.";
                     userPw.value = "";
                     userPw.focus();
                     pw_check.style.color = "red";
                 }
+            }
 
+            // 아이디 중복 확인
+            function id_check(){
+                var userid = document.getElementById("user_id");
+                //한글 제외
+                var useridc = /[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{6,10}/.exec(userid.value);
+
+                if (useridc){
+                    // 검증 통과 했다면 새로운 창에서 중복 확인 진행
+                    url = "login_check.php?id=" + useridc;
+                    window.open(url, "중복확인", "width = 100, height = 50");
+                    document.getElementById("idc").innerHTML = "";
+                }
+                else {
+                    document.getElementById("idc").innerHTML = "입력을 안했거나 6자리 이하의 아이디 입니다.";
+                    document.getElementById("idc").style.color = "red";
+                }
             }
         </script>
         이름 : <input type = "text" name = "name" maxlength = "10"><br><br>
@@ -59,6 +75,5 @@
         <input type = "reset" value = "초기화">
         </form>
         <a href = "login.php"><button>홈 화면</button></a>
-        
     </body>
 </html>
