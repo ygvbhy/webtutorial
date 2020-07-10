@@ -17,7 +17,7 @@
         <p id = "pw_check"></p>
         비밀번호 확인 : <input type = "password" name = "password_check" minlength = "8" id = "user_pw_check" onchange = "comparePw()">
         <p id = "pw_check_ok"></p>
-        <script>
+        <script type = "text/javascript">
             var userPw = document.getElementById("user_pw");
             var userPwCheck = document.getElementById("user_pw_check");
 
