@@ -2,7 +2,7 @@
 <?php
 session_start();
 $name = $_SESSION['name'];
-if ($name == ""){  
+if ($name == ""){
 ?>
 <!DOCTYPE html>
 <html lang = "ko">
@@ -26,12 +26,9 @@ else {
 ?>
     <br><br>
     <a href = "logout.php"><button>로그아웃</button></a>
-    <a href = "#"><button>개인정보 수정</button></a>
+    <a href = "#"><button>개인정보 수정</button></a> <!-- 준비중 -->
     <a href = "test1.php"><button>게시판</button></a>
-<?php
-}
-
-?>
+<?php } ?>
 
 </body>
 </html>

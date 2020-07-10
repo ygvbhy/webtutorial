@@ -4,6 +4,7 @@
     $login = new Mysql_DB("localhost", "root", "wjsansrk", "test");
     $id = $_POST['id'];
     $pass = $_POST['password'];
+    // 로그인 할때 입력했는지 확인
     if(!$id && !$pass){
         echo"
             <script>
@@ -16,8 +17,6 @@
         $pass_chack = $login->duplicate("SELECT SHA2('$pass', 224);");
         $id_check = $login->login_check_id_db("SELECT Id from login where Id = '$id';");
         $pw_check = $login->login_check_pw_db("SELECT Pw from login where Pw = SHA2('$pw', 224);");
-        echo $pw_check;
-        echo $pw;
         if ($id == $id_check && $pass_chack == $pw_check){
             session_start();
             $_SESSION['name'] = $name;

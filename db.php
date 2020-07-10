@@ -1,4 +1,9 @@
 <?php
+/* 
+    * DB 접속을 위한 클래스
+    * 마지막 수정자 : 박상윤
+    * 수정일 : 20/07/10
+ */
 class Mysql_DB{
     public $db;
     public $db_host;
@@ -51,6 +56,7 @@ class Mysql_DB{
         $this->db;
         $this->sql = $sql;
         $result = mysqli_query($this->db, $sql);
+        // 글 번호, 제목, 작성일, 조회수 순으로 테이블 형태로 출력
         while($row = mysqli_fetch_assoc($result)){
             echo"
             <tr>
