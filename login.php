@@ -21,6 +21,7 @@ if ($name == ""){
         <p id = "meg"></p>
         <a href = "join.php"><button>회원가입</button></a>
         <script>
+            // 아무것도 없이 로그인 버튼 만 누르면 경고창 출력
             $("#form").submit(function(){
                 if ($("#id").val() == "" || $("#password").val() == ""){
                     $("#meg").html("값을 입력해 주세요.");
